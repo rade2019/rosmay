@@ -1,0 +1,40 @@
+We need a repository in Github
+
+1. Create a repository
+what is it called - Rosmay
+git init - initials our Rosmay repository
+where is it located-  we have questions about this....should it be in cohert 3? 
+Tracey is a little confused about how this space works....
+include a README - The readme has the project organisation details
+
+Our personal directories will be reflected in the git repository. 
+instructions/  
+PythonScripts/  
+R-Project/
+
+Raw data is on Pearcy blah blah...put in path name they are read only
+
+Output data ... goes to a new file in Pearcy....output/Rosmay
+Filenames, metadata file, sequencing data....they need to be processed,
+there may be some intermediate outputs in here, stay flexible.  
+
+Commits are recommended for changes in code, so we commit when we have a
+ "sensible change that is decribed" 
+
+A push or a pull is a commit to the hub, you are interchangeing what you have
+done. Other people know your changes and you add to thier file. 
+
+Where are we pushing/pulling- rosmay repository.
+
+Communication - Commits are to the branches which we can work on 
+independently or together
+push is to the branch as well
+When we push or pull, notify each other in slack. 
+
+Pull Requests are the heart of collaboration on GitHub. 
+When you open a pull request, you’re proposing your changes and 
+requesting that someone review and pull in your contribution and 
+merge them into their branch
+
+We could each have a branch off of master for our work called 
+whatever feature 1 feature 2 etc

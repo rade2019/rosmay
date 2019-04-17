@@ -1,0 +1,19 @@
+may159@MVPC76-MV MINGW64 ~
+$ ssh may159@pearcey.hpc.csiro.au
+
+may159@pearcey-login:~> cd /OSM
+may159@pearcey-login:/OSM> ls
+CBR  CDC  galaxy
+may159@pearcey-login:/OSM> cd CBR
+may159@pearcey-login:/OSM/CBR>
+may159@pearcey-login:/OSM/CBR> cd /AF_DATASCHOOL
+may159@pearcey-login:/OSM/CBR> cd AF_DATASCHOOL/
+may159@pearcey-login:/OSM/CBR/AF_DATASCHOOL>
+may159@pearcey-login:/OSM/CBR/AF_DATASCHOOL> cd input/
+may159@pearcey-login:/OSM/CBR/AF_DATASCHOOL/input> ls
+2018-04-23_Lmaculans     cla473          genome   kerensa     LukeB           ref_genome
+2018-05-03_canola        data            Hiz_Kim  kim         Maddie          test.fastq
+2019-04-12_Transcritome  fasqc_practise  jared    lost+found  Pools_metadata  wat344
+may159@pearcey-login:/OSM/CBR/AF_DATASCHOOL/input> cd 2019-04-12_Transcritome
+
+may159@pearcey-login:/OSM/CBR/AF_DATASCHOOL/input/2019-04-12_Transcritome> ls
