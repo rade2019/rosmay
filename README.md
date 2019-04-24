@@ -1,2 +1,0 @@
-# rosmay
-Big data assignment

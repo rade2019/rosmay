@@ -12,9 +12,8 @@ instructions/
 PythonScripts/  
 R-Project/
 
-Raw data is on Pearcy blah blah...put in path name they are read only
-
-Output data ... goes to a new file in Pearcy....output/Rosmay
+Raw data is on path may159@pearcey-login:/OSM/CBR/AF_DATASCHOOL/input/2019-04-12_Transcritome
+Output data is on the file in pearcy may159@pearcey-login:/OSM/CBR/AF_DATASCHOOL/output/rosmay
 Filenames, metadata file, sequencing data....they need to be processed,
 there may be some intermediate outputs in here, stay flexible.  
 
