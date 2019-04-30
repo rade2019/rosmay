@@ -31,9 +31,11 @@ read_csv('/OSM/CBR/AF_DATASCHOOL/output/rosmay/datatidy_out.tsv')
 # read in the file names and produce a table to join
 
 file_names <- list.files(path = '/OSM/CBR/AF_DATASCHOOL/input/2019-04-12_Transcritome', 
-                         full.names = T, pattern = "*.fastq.gz")
-print(file_names)
-separate(file_names, sep = "_")
+                         full.names = T, pattern = "*.fastq.gz") %>% 
+
+
+
+write_tsv(x = file_names, path = '/OSM/CBR/AF_DATASCHOOL/output/rosmay/filenames_out.tsv' )
 
 
 
