@@ -37,8 +37,10 @@ file_names <- list.files(path = '/OSM/CBR/AF_DATASCHOOL/input/2019-04-12_Transcr
                          full.names = F, pattern = "*.fastq.gz")
 
 df_file_names <- as.data.frame(file_names)
-file_names_sep <- data.frame(strsplit(as.character(df_file_names$filenames), '_', fixed = TRUE))
-
+##below did not work, but the single dataframe above can probably just be split
+##file_names_sep <- data.frame(strsplit(as.character(df_file_names$filenames), '_', 
+                                      #fixed = TRUE))
+##next step just separate columns?
 
 
 write_tsv(x = file_names, path = '/OSM/CBR/AF_DATASCHOOL/output/rosmay/filenames_out.tsv' )
