@@ -9,6 +9,7 @@ library(readtext)
 library(stringi)
 library(stringr)
 
+
 setwd('/OSM/CBR/AF_DATASCHOOL/input/2019-04-12_Transcritome') 
 savePath <- ('/OSM/CBR/AF_DATASCHOOL/output/rosmay')
   
@@ -25,9 +26,9 @@ datatidy_rosmay <- datafile %>%
   separate(Index, into = c("index_1", "index_2","gen"), sep = " ")  %>%
   mutate(gen = str_remove(gen, '\\(')) %>% 
   mutate(gen = str_remove(gen, '\\)')) %>% 
-  separate(gen, into = c("gen1", "gen2"), sep = "-")
+  separate(gen, into = c("gen1", "gen2"), sep = "-") %>% 
+  separate('Sample/Name', into =c('sample','name'),sep = '_')
  
-  
   
 write_csv(x = datatidy_rosmay,path = '/OSM/CBR/AF_DATASCHOOL/output/rosmay/datatidy_out.csv')
 write_tsv (x = datatidy_rosmay,path = '/OSM/CBR/AF_DATASCHOOL/output/rosmay/datatidy_out.tsv')
@@ -35,15 +36,12 @@ read_csv('/OSM/CBR/AF_DATASCHOOL/output/rosmay/datatidy_out.tsv')
 
 # read in the file names and produce a table to join
 
+
 file_names <- list.files(path = '/OSM/CBR/AF_DATASCHOOL/input/2019-04-12_Transcritome', 
                          full.names = F, pattern = "*.fastq.gz")
-
 df_file_names <- as.data.frame(file_names)
-##below did not work, but the single dataframe above can probably just be split
-##file_names_sep <- data.frame(strsplit(as.character(df_file_names$filenames), '_', 
-                                      #fixed = TRUE))
-##next step just separate columns?
-
+df_split <- separate(df_file_names, col = file_names, into = c('c1','c2','c3','c4','c5','gene','c6','c7','c8','c9','c10','c11'), sep='_')
+print(df_file_names)
 
 write_tsv(x = file_names, path = '/OSM/CBR/AF_DATASCHOOL/output/rosmay/filenames_out.tsv' )
 
