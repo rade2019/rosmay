@@ -24,7 +24,9 @@ datatidy_rosmay <- datafile %>%
   separate("External ID", into = c("day_duration", "day_sample"), sep = 1) %>%
   separate(Index, into = c("index_1", "index_2","gen"), sep = " ")  %>%
   mutate(gen = str_remove(gen, '\\(')) %>% 
-  mutate(gen = str_remove(gen, '\\)'))
+  mutate(gen = str_remove(gen, '\\)')) %>% 
+  separate(gen, into = c("gen1", "gen2"), sep = "-")
+ 
   
   
 write_csv(x = datatidy_rosmay,path = '/OSM/CBR/AF_DATASCHOOL/output/rosmay/datatidy_out.csv')
