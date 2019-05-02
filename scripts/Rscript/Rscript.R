@@ -39,13 +39,16 @@ read_csv('/OSM/CBR/AF_DATASCHOOL/output/rosmay/datatidy_out.tsv')
 
 file_names <- list.files(path = '/OSM/CBR/AF_DATASCHOOL/input/2019-04-12_Transcritome', 
                          full.names = F, pattern = "*.fastq.gz")
+
 df_file_names <- as.data.frame(file_names)
 print(df_file_names)
+#split the file names as read from Bowen directory
 df_split <- separate(df_file_names, col = file_names, into = c('c1','c2','sample_f','name','origin_f','gen','c6','c7','c8','c9','c10','run'), sep='_') %>% 
             separate(gen, into = c("gen1_f", "gen2_f"), sep = "-") %>% 
             mutate(run = str_remove(run,'.fastq.gz'))
-df_split
-init_join <- left_join(df_file_names,datatidy_rosmay,by="name")
+
+init_join <- left_join(df_split,datatidy_rosmay)
+init_join %>% unite("gen", c("gen1_f","gen2_f"))
 
 write_tsv(x = df_split, path = '/OSM/CBR/AF_DATASCHOOL/output/rosmay/filenames_out.tsv' )
 
