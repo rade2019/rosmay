@@ -40,11 +40,14 @@ read_csv('/OSM/CBR/AF_DATASCHOOL/output/rosmay/datatidy_out.tsv')
 file_names <- list.files(path = '/OSM/CBR/AF_DATASCHOOL/input/2019-04-12_Transcritome', 
                          full.names = F, pattern = "*.fastq.gz")
 df_file_names <- as.data.frame(file_names)
-df_split <- separate(df_file_names, col = file_names, into = c('c1','c2','sample_f','name_f','origin_f','gen','c6','c7','c8','c9','c10','c11'), sep='_') %>% 
+print(df_file_names)
+df_split <- separate(df_file_names, col = file_names, into = c('c1','c2','sample_f','name','origin_f','gen','c6','c7','c8','c9','c10','run'), sep='_') %>% 
             separate(gen, into = c("gen1_f", "gen2_f"), sep = "-") %>% 
-            mutate(c11 = str_remove(c11,'.fastq.gz'))
+            mutate(run = str_remove(run,'.fastq.gz'))
+df_split
+init_join <- left_join(df_file_names,datatidy_rosmay,by="name")
 
-write_tsv(x = file_names, path = '/OSM/CBR/AF_DATASCHOOL/output/rosmay/filenames_out.tsv' )
+write_tsv(x = df_split, path = '/OSM/CBR/AF_DATASCHOOL/output/rosmay/filenames_out.tsv' )
 
 
 
