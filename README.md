@@ -30,7 +30,7 @@ Intermediate output files stored on the Bowen HPC
       samles.txt
          in the end this file was not required
          
-    RScript called RScricpt was used to
+   RScript called RScricpt was used to
       Separate columns to give each vector its own column
       _ was used as a separator
     output as a tsv stored
@@ -45,15 +45,17 @@ Intermediate output files stored on the Bowen HPC
    output metadata table as tsv in tidy format
    /OSM/CBR/AF_DATASCHOOL/ouput/rosmay/metadata.tsv
    
-   Python script used to extract headers from inside the file
+ Python script used to extract headers from inside the file
    still under development as we hit a few snags.
    
 3. Process
+
 4.Align
+
 5.Count
+
 6.Visualisation - challenge
+
 7.Parameter sweep - stretch exercise
-8. Presentation
 
-
-
+8.Presentation
